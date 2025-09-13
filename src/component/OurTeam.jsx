@@ -7,6 +7,14 @@ const OurTeam = () => {
   });
 
   const teamData = [
+     {
+      name: "Business Partner",
+      role: "Konstructo Solar Energy",
+      description:
+        "Businesses shift to clean, reliable, and cost-effective solar energy. With rising electricity costs and increasing environmental concerns.",
+      images: ["CEO.jpeg", "BDO.png"], // 👈 Two images
+      animation: "animate-zoomIn",
+    },
     {
       name: "M. Usman Anjum",
       role: "Founder and CEO",
@@ -31,14 +39,7 @@ const OurTeam = () => {
       image: "HR.jpg",
       animation: "animate-slideInRight",
     },
-    {
-      name: " M.Tayyab ",
-      role: "Net Metering ",
-      description:
-        "M. Tayyab is an expert in installing 3-phase meters and setting up net metering systems for solar energy. With hands-on experience and technical knowledge, he ensures smooth installation",
-      image: "Net.jpeg", // Make sure this image exists in your public or assets folder
-      animation: "animate-slideInLeft",
-    },
+   
   ];
 
   return (
@@ -60,14 +61,33 @@ const OurTeam = () => {
             <div
               key={index}
               ref={(el) => sectionRefs(el)}
-              className={`p-6 bg-white rounded-lg max-w-xs w-full duration-700 hover:scale-105 transition-transform transform ${sectionInViews ? member.animation : "opacity-0"
-                } border border-gray-300 hover:shadow-md flex flex-col items-center`}
+              className={`p-6 bg-white rounded-lg max-w-xs w-full duration-700 hover:scale-105 transition-transform transform ${
+                sectionInViews ? member.animation : "opacity-0"
+              } border border-gray-300 hover:shadow-md flex flex-col items-center`}
             >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="rounded-full w-28 h-28 object-cover mb-4 border-4 border-[#0f1c47]"
-              />
+              {/* If single image */}
+              {member.image && (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="rounded-full w-28 h-28 object-cover mb-4 border-4 border-[#0f1c47]"
+                />
+              )}
+
+              {/* If multiple images */}
+              {member.images && (
+                <div className="flex gap-3 mb-4">
+                  {member.images.map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`${member.name} ${i + 1}`}
+                      className="rounded-full w-20 h-20 object-cover border-4 border-[#0f1c47]"
+                    />
+                  ))}
+                </div>
+              )}
+
               <h2 className="text-xl text-[#0f1c47] mb-2 text-nowrap font-krona">
                 {member.name}
               </h2>
