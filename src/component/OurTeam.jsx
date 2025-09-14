@@ -9,28 +9,13 @@ const OurTeam = () => {
   const teamData = [
      {
       name: "Business Partner",
-      role: "Konstructo Solar Energy",
+      role: "Founder and CEO ,BDO ",
       description:
         "Businesses shift to clean, reliable, and cost-effective solar energy. With rising electricity costs and increasing environmental concerns.",
       images: ["CEO.jpeg", "BDO.png"], // 👈 Two images
       animation: "animate-zoomIn",
     },
-    {
-      name: "M. Usman Anjum",
-      role: "Founder and CEO",
-      description:
-        "M Usman Anjum leads solar innovation, ensuring top-tier service and driving continuous progress in sustainable energy solutions.",
-      image: "CEO.jpeg",
-      animation: "animate-slideInLeft",
-    },
-    {
-      name: "Asif Majeed",
-      role: "BDO",
-      description:
-        "As a Business Development Officer, my mission is to help homes and businesses shift to clean, reliable, and cost-effective solar energy. With rising electricity costs and increasing environmental concerns.",
-      image: "BDO.png",
-      animation: "animate-fadeIn",
-    },
+   
     {
       name: "Anas Rafiq",
       role: "HR & Marketing Manager",
